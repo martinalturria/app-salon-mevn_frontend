@@ -4,7 +4,7 @@
 
 <template>
     <div>
-        <h1>Desde Detalles</h1>
+        <h1 class="text-white">Detalles de la cita</h1>
     </div>
 </template>
 

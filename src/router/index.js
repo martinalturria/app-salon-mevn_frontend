@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import ReservacionesVista from "../views/reservaciones/ReservacionesVista.vue";
+import AppointmentsView from "@/views/appointments/AppointmentsView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,28 +12,28 @@ const router = createRouter({
         },
         {
             path: "/reservaciones",
-            name: "reservaciones",
-            component: ReservacionesVista,
+            name: "appointments",
+            component: AppointmentsView,
             children: [
                 {
                     path: "nueva",
                     component: () =>
-                        import("../views/reservaciones/NuevaReservacion.vue"),
+                        import("../views/appointments/NewAppointmentView.vue"),
                     children: [
                         {
                             path: "",
-                            name: "nueva-reserva",
+                            name: "new-appointment",
                             component: () =>
                                 import(
-                                    "../views/reservaciones/ServicesView.vue"
+                                    "../views/appointments/ServicesView.vue"
                                 ),
                         },
                         {
                             path: "detalles",
-                            name: "detalles",
+                            name: "appointment-details",
                             component: () =>
                                 import(
-                                    "../views/reservaciones/Detalles.vue"
+                                    "../views/appointments/AppointmentView.vue"
                                 ),
                         },
                     ],
